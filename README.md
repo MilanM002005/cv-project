@@ -15,83 +15,28 @@ This project is designed for:
 
 ---
 
-# ✨ Features
+"""
+AirControl - Gesture-Controlled Desktop Automation
 
-### 🚘 Vehicle Detection
-Detects cars, buses, trucks, motorcycles, bicycles, and other road vehicles in real time.
+Control media playback and volume with hand gestures using your webcam.
 
-### 🚶 Pedestrian Detection
-Accurately identifies pedestrians and vulnerable road users.
+Vision (MediaPipe) -> Intent (finger counting) -> Action (pyautogui).
+This "perceive-decide-act" loop is the same skeleton used by AI agents.
 
-### 🎯 Multi-Object Tracking
-Maintains persistent IDs across video frames using object tracking.
+Gestures (number of fingers held up):
+    0 (fist)          -> Mute / unmute
+    1 (index)         -> Volume up
+    2 (peace)         -> Volume down
+    3               -> Next track
+    4               -> Previous track
+    5 (open palm)     -> Play / pause
 
-### 🌍 Monocular Depth Estimation
-Generates depth maps from a single RGB camera without requiring LiDAR.
+Keys:
+    a  -> Arm / disarm automation (starts DISARMED so you can test safely)
+    q  -> Quit
 
-### 🧊 3D Perception Visualization
-Creates a pseudo-3D representation of detected objects using estimated depth.
+Setup:
+    pip install mediapipe opencv-python pyautogui
+    python aircontrol.py
 
-### 📈 Future Path Prediction
-Predicts probable trajectories of moving vehicles and pedestrians.
-
-### 🛣️ Traffic Scene Understanding
-Analyzes lanes, road users, traffic density, and surrounding context.
-
-### ⚠️ Risk Zone Analysis
-Highlights potential collision regions and unsafe driving situations.
-
-### 📊 Driving Intelligence Dashboard
-Displays detection statistics, tracking information, risk indicators, and perception outputs in an intuitive interface.
-
----
-
-# 🏗️ System Architecture
-
-```
-Dashcam Video
-      │
-      ▼
-Frame Extraction
-      │
-      ▼
-Object Detection (YOLO)
-      │
-      ▼
-Multi-Object Tracking
-      │
-      ▼
-Depth Estimation
-      │
-      ▼
-Trajectory Prediction
-      │
-      ▼
-Risk Analysis
-      │
-      ▼
-Scene Understanding
-      │
-      ▼
-Visualization Dashboard
-```
-
----
-
-# 🧠 AI Components
-
-- YOLOv8 Object Detection
-- Multi-Object Tracking
-- Monocular Depth Estimation
-- Motion Analysis
-- Future Trajectory Prediction
-- Collision Risk Assessment
-- Computer Vision Visualization
-
----
-
-- Ultralytics YOLO
-- OpenCV
-- PyTorch
-- NumPy
-- Autonomous Driving Research Community
+"""
