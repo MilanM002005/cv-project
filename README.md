@@ -1,4 +1,4 @@
-# 🚗 Autonomous Driving Perception Engine
+# Autonomous Driving Perception Engine
 
 
 The Autonomous Driving Perception Engine processes road videos frame-by-frame and extracts meaningful environmental information required for autonomous navigation.
@@ -38,5 +38,31 @@ Keys:
 Setup:
     pip install mediapipe opencv-python pyautogui
     python aircontrol.py
+
+"""
+
+
+"""
+Emotion-Aware AI Assistant
+==========================
+Your webcam reads your facial expression from MediaPipe Face Mesh landmarks,
+infers a coarse mood, and an LLM (Claude) adapts its tone to how you look.
+Perceive (vision) -> infer (mood) -> reason (LLM) -> respond: a small
+multimodal agent loop.
+
+How it runs:
+  - A background thread watches your face and keeps a smoothed current mood.
+  - You chat in the terminal. Each reply is tuned to your detected mood.
+
+Detected moods (heuristic, from geometry — see notes below):
+  Happy, Surprised, Sad, Neutral
+
+Setup:
+  pip install mediapipe opencv-python numpy anthropic
+  export ANTHROPIC_API_KEY="sk-ant-..."     # (Windows: set ANTHROPIC_API_KEY=...)
+  python emotion_assistant.py
+
+Type 'quit' to exit.
+
 
 """
