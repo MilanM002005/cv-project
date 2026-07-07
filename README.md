@@ -66,3 +66,30 @@ Type 'quit' to exit.
 
 
 """
+
+"""
+Focus Analytics - Study-Session Attention Tracker
+=================================================
+Uses your webcam to estimate whether you're actually focused on your screen,
+by combining two signals from MediaPipe Face Mesh:
+
+    1. Head pose  (are you facing the screen, or looking away?)
+    2. Eye state  (eyes open & alert, or closed / drowsy?)
+
+At the end it prints a summary and saves a PNG report + CSV log — the
+"productivity AI + data viz" angle.
+
+Per-frame states:
+    FOCUSED     - face present, looking forward, eyes open
+    DISTRACTED  - looking away from the screen
+    DROWSY      - eyes closed for a sustained period
+    AWAY        - no face detected (you left the desk)
+
+Keys:
+    q  -> quit and generate the session report
+
+Setup:
+    pip install mediapipe opencv-python numpy matplotlib
+    python focus_analytics.py
+"""
+
